@@ -1,0 +1,120 @@
+@import "dust-fonts.css";
+@import "generated/icon-sd";
+
+:root {
+  --ref-border_radius: 20px;
+  --ref-border_radius-1: 14px;
+  --color-bright: #f2f2f2;
+  --shade-bright: #98b29b;
+  --color-medium: #5d5d5d;
+  --shade-medium: #4a4a4a;
+  --color-font-flat: #414143;
+  --color-green: #46bf56;
+  --shade-green: #034d28;
+  --color-font-gold: #f0c755;
+  --shade-font-gold: #ba4a02;
+  --color-font-white: #ffffff;
+  --shade-font-green: var(--shade-green);
+  --dust-font_family: "Comfortaa", cursive;
+  --dust-font_family-1: "Flow Rounded", cursive;
+  //--dust-font_family-1: "Lato", sans-seri;
+}
+
+.panel-ref {
+  // ---
+  // ref https://graphicriver.net/item/game-gui-20/23647372
+  background-color: var(--color-bright);
+  border-radius: var(--ref-border_radius);
+  color: var(--color-font-flat);
+
+  border-bottom: 4px solid var(--shade-bright);
+
+  padding: 8px;
+}
+
+.font-green {
+  text-shadow: 
+		0px 1px 0px var(--shade-font-green),
+		0px 3px 0px var(--shade-font-green);
+
+  color: var(--color-font-white);
+}
+
+.button-ref {
+  background-color: var(--color-green);
+  border-radius: var(--ref-border_radius-1);
+
+  border-bottom: 4px solid var(--shade-green);
+
+  padding: 8px 8px;
+  margin: 0px 8px;
+
+  // font
+  .font-green();
+  letter-spacing: -4px;
+  font-size: 1.3em;
+}
+
+.font-gold {
+  text-shadow: 0px 2px 0px var(--shade-font-gold);
+  color: var(--color-font-gold);
+}
+
+// Active avessy ---
+
+avessy.dapp {
+  &.SHOW_ONLY_ONE_PRINT print {
+    display: none;
+
+    &.reveal {
+      display: block;
+    }
+  }
+}
+
+// Stylish avessy ---
+
+avessy {
+  &.dapp {
+    print {
+      font-weight: bold;
+      font-family: var(--dust-font_family);
+      font-size: 32px;
+
+      .panel-ref();
+    }
+
+    print.dark {
+      background-color: var(--color-medium);
+      border-bottom: 4px solid var(--shade-medium);
+      color: var(--color-font-white);
+    }
+
+    .whisper {
+      font-size: 0.5em;
+    }
+
+    button {
+      .button-ref();
+    }
+
+    icon {
+      .sprite-icon-sd();
+      margin: 0px 8px;
+    }
+  }
+
+  &.showtime .dust-0 {
+    display: none;
+  }
+}
+
+// Boring avessy ---
+
+avessy {
+  print {
+    margin: 0.3em 0;
+    display: block;
+    width: 100%;
+  }
+}

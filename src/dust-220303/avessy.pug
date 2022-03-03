@@ -1,0 +1,16 @@
+avessy#main 
+	print.dust-0
+		include:markdown-it avessy.md
+
+	print yo 🍍  (#0). Кликай 🐁
+	print этот элемент - #1 сообщение в нарративе.
+	print Элементы типа #[:markdown-it(inline) `print`] выводят новые сообщения
+		icon#goto.readme.icon-md-questionmark-yellow
+		t.whisper <- тут можно прочитать подробнее
+	print А 
+		button#toggle-style.SHOW_ONLY_ONE_PRINT вот этой кнопкой 
+		t можно изменить режим отображения сообщений
+
+	print#readme.dark
+		icon.icon-sd-cross-red
+		include:markdown-it README.md

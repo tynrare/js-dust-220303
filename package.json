@@ -1,0 +1,18 @@
+{
+  "name": "js-dust-220225",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.pug",
+    "build": "parcel build src/index.pug"
+  },
+  "author": "tynrare",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-less": "^2.3.2",
+    "@parcel/transformer-pug": "^2.3.2",
+    "jstransformer-markdown-it": "^2.1.0",
+    "parcel": "^2.3.2"
+  }
+}
