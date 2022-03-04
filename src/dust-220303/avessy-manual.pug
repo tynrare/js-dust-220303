@@ -1,5 +1,4 @@
-avessy#avessy_manual
-	cmd#remove-style.SHOW_ONLY_ONE_PRINT
+avessy#avessy_manual.place-center
 	cmd#add-option.SHOW_ONLY_ONE_PRINT
 
 	print.dark.fit-content.flex.column-center.noclicks
@@ -22,9 +21,9 @@ avessy#avessy_manual
 	cmd#remove-option.SHOW_ONLY_ONE_PRINT 
 
 	print.pinned
-		button#toggle-style.SHOW_ONLY_ONE_PRINT переключить
+		button#toggle-style.SHOW_ONLY_ONE_PRINT переключить режим
 
-	cmd#remove-option.SHOW_ONLY_ONE_PRINT 
+	cmd#add-option.SHOW_ONLY_ONE_PRINT 
 
 	print.dark ...
 		t.whisper Тут кажись какая-то багулина 🐛
@@ -45,3 +44,9 @@ avessy#avessy_manual
 			whitespace
 			t пойду посплю
 		
+	print ... размеры скачут как хотят
+
+	glue.flex
+		label.style-ref-b.right 🤷 🤷 🤷
+		print 
+			:markdown-it `220304 07:24`. 

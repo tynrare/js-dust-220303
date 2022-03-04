@@ -2,6 +2,12 @@ extends dust
 
 block headcontent
 	title dust ▮
+	link(rel='stylesheet' href='dust-220303/index.less')
 
 block bodycontent
+	avessy.dapp(style='margin-top: 1em;')
+		print.dark.fit-content.flex.column-center
+			div.flex.row-center
+				a(href='dust-220303#avessy_menu').font-gold avessy 
+				icon.icon-sd-star-gold
 	include:markdown-it index.md

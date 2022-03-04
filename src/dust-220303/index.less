@@ -10,8 +10,8 @@
   --shade-bright: #98b29b;
   --color-medium: #5d5d5d;
   --shade-medium: #4a4a4a;
-	--color-muted: #B4AF91;
-	--shade-muted: #544B2B;
+  --color-muted: #b4af91;
+  --shade-muted: #544b2b;
   --color-font-flat: #414143;
   --color-green: #46bf56;
   --shade-green: #034d28;
@@ -41,8 +41,7 @@
   //--color: var(--color-font-white);
   //--shadow-color: var(--shade-muted);
 
-  text-shadow: 0px 1px 0px var(--shadow-color),
-    0px 3px 0px var(--shadow-color);
+  text-shadow: 0px 1px 0px var(--shadow-color), 0px 3px 0px var(--shadow-color);
 
   color: var(--color);
 }
@@ -51,23 +50,22 @@
   --color: var(--color-font-white);
   --shadow-color: var(--shade-font-green);
 
-	.font-ref();
+  .font-ref();
 }
 
-.font-gold  {
+.font-gold {
   --color: var(--color-font-gold);
   --shadow-color: var(--shade-font-gold);
 
-	.font-ref();
+  .font-ref();
 }
 
-.font-muted  {
+.font-muted {
   --color: var(--color-font-white);
   --shadow-color: var(--shade-muted);
 
-	.font-ref();
+  .font-ref();
 }
-
 
 // abstract
 .button-ref {
@@ -88,7 +86,7 @@
   --background-color: var(--color-green);
   --shadow-color: var(--shade-green);
 
-	.button-ref();
+  .button-ref();
   .font-green();
 }
 
@@ -96,7 +94,7 @@
   --background-color: var(--color-muted);
   --shadow-color: var(--shade-muted);
 
-	.button-ref();
+  .button-ref();
   .font-muted();
 }
 
@@ -109,7 +107,10 @@ avessy {
       margin: 0;
       display: flex;
       flex-direction: column;
-      min-height: 100%;
+
+      &.ashes-0 {
+        min-height: 100%;
+      }
     }
 
     &.showtime .dust-0 {
@@ -132,13 +133,21 @@ avessy {
 
       user-select: none;
 
-      & * {
-        pointer-events: none;
-      }
-
       //margin: @print-margin auto;
 
       .panel-ref();
+    }
+
+    &.ashes-0 print {
+      button,
+      icon {
+        pointer-events: all;
+        cursor: pointer;
+      }
+
+      & * {
+        pointer-events: none;
+      }
     }
 
     print whitespace {
@@ -165,12 +174,6 @@ avessy {
 
     .whisper {
       font-size: 0.5em;
-    }
-
-    button,
-    icon {
-      pointer-events: all;
-      cursor: pointer;
     }
 
     button {
@@ -206,7 +209,7 @@ avessy {
         }
 
         &.right {
-          margin-left: var(--ref-border_radius);
+          margin-right: var(--ref-border_radius);
         }
       }
       &.style-ref-b {
@@ -226,7 +229,8 @@ avessy {
         }
 
         &.right {
-          margin-left: 0;
+          margin-right: 0;
+					margin-left: auto;
         }
       }
     }
@@ -238,9 +242,11 @@ avessy {
 avessy {
   display: block;
 
-  &.noclicks print *,
-  & print.noclicks * {
-    pointer-events: none !important;
+  &.ashes-0 {
+    &.noclicks print *,
+    & print.noclicks * {
+      pointer-events: none !important;
+    }
   }
 
   print {
