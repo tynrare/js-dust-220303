@@ -1,5 +1,5 @@
 avessy#avessy_manual
-
+	cmd#remove-style.SHOW_ONLY_ONE_PRINT
 	cmd#add-option.SHOW_ONLY_ONE_PRINT
 
 	print.dark.fit-content.flex.column-center.noclicks
@@ -24,5 +24,24 @@ avessy#avessy_manual
 	print.pinned
 		button#toggle-style.SHOW_ONLY_ONE_PRINT переключить
 
-	print ...
+	cmd#remove-option.SHOW_ONLY_ONE_PRINT 
+
+	print.dark ...
+		t.whisper Тут кажись какая-то багулина 🐛
+		button#toggle-style(arguments='SHOW_ONLY_ONE_PRINT') та же кнопка
+
+
+	glue.flex
+		label.style-ref-a.left dust to ashes.
+		print 
+			whitespace
+			:markdown-it `220304 06:21`. 
+
+	print А, блин, уже 06:52
+
+	glue.flex
+		label.style-ref-b.left Тим Борисов:
+		print 
+			whitespace
+			t пойду посплю
 		

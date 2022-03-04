@@ -10,6 +10,8 @@
   --shade-bright: #98b29b;
   --color-medium: #5d5d5d;
   --shade-medium: #4a4a4a;
+	--color-muted: #B4AF91;
+	--shade-muted: #544B2B;
   --color-font-flat: #414143;
   --color-green: #46bf56;
   --shade-green: #034d28;
@@ -34,29 +36,68 @@
   padding: 8px;
 }
 
-.font-green {
-  text-shadow: 0px 1px 0px var(--shade-font-green),
-    0px 3px 0px var(--shade-font-green);
+// abstract
+.font-ref {
+  //--color: var(--color-font-white);
+  //--shadow-color: var(--shade-muted);
 
-  color: var(--color-font-white);
+  text-shadow: 0px 1px 0px var(--shadow-color),
+    0px 3px 0px var(--shadow-color);
+
+  color: var(--color);
 }
 
+.font-green {
+  --color: var(--color-font-white);
+  --shadow-color: var(--shade-font-green);
+
+	.font-ref();
+}
+
+.font-gold  {
+  --color: var(--color-font-gold);
+  --shadow-color: var(--shade-font-gold);
+
+	.font-ref();
+}
+
+.font-muted  {
+  --color: var(--color-font-white);
+  --shadow-color: var(--shade-muted);
+
+	.font-ref();
+}
+
+
+// abstract
 .button-ref {
-  background-color: var(--color-green);
+  //--shadow-color: var(--shade-muted);
+  //--background-color: var(--color-muted);
+
   border-radius: var(--ref-border_radius-1);
 
-  //border-bottom: 6px solid var(--shade-green);
-  box-shadow: 0px 6px 0px 0px var(--shade-green);
+  box-shadow: 0px 6px 0px 0px var(--shadow-color);
+  background-color: var(--background-color);
 
   // font
-  .font-green();
   letter-spacing: -4px;
   font-size: 1em;
 }
 
-.font-gold {
-  text-shadow: 0px 2px 0px var(--shade-font-gold);
-  color: var(--color-font-gold);
+.button-ref-green {
+  --background-color: var(--color-green);
+  --shadow-color: var(--shade-green);
+
+	.button-ref();
+  .font-green();
+}
+
+.button-ref-muted {
+  --background-color: var(--color-muted);
+  --shadow-color: var(--shade-muted);
+
+	.button-ref();
+  .font-muted();
 }
 
 // Stylish avessy ---
@@ -133,7 +174,7 @@ avessy {
     }
 
     button {
-      .button-ref();
+      .button-ref-green();
       margin: 4px 8px;
       padding: 4px 16px;
       //height: 50px;
@@ -154,7 +195,7 @@ avessy {
       padding: 0px 40px;
 
       &.style-ref-a {
-        .button-ref();
+        .button-ref-muted();
         text-align: center;
         margin: auto;
         font-size: 40px;

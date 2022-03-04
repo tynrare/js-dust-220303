@@ -149,7 +149,7 @@ function Input(app) {
     },
     "remove-option": (args) => {
       Step.OPTIONS[args[0]] = false;
-    },
+    }
   };
 
   this.put = (key, args) => {
