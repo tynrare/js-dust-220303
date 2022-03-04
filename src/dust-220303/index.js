@@ -14,7 +14,7 @@ function main() {
   avessy.run();
 
   const globals = new Avessy(main);
-  globals.init({ key: "avessy_globals" }).run();
+  globals.init({ key: "avessy_globals" }).run().stop();
 }
 
 main();

@@ -1,5 +1,6 @@
 @import "dust-fonts.css";
 @import "generated/icon-sd";
+@import "../generic";
 
 :root {
   --ref-border_radius: 20px;
@@ -62,8 +63,24 @@
 
 avessy {
   &.dapp {
+    & {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    &.showtime .dust-0 {
+      display: none;
+    }
+
     avessy {
-      margin: 0px 10px;
+      margin-bottom: 3em;
+      &.place-center {
+        margin-bottom: auto;
+      }
+      display: flex;
+      flex-direction: column;
     }
 
     print {
@@ -71,7 +88,7 @@ avessy {
       font-family: var(--dust-font_family);
       font-size: 32px;
 
-			user-select: none;
+      user-select: none;
 
       .panel-ref();
     }
@@ -114,38 +131,20 @@ avessy {
       margin: 0px 8px;
     }
   }
-
-  &.showtime .dust-0 {
-    display: none;
-  }
 }
 
 // Boring avessy ---
 
 avessy {
+  display: block;
+
   .noclicks {
     pointer-events: none;
   }
 
   print {
-    margin: 0.3em 0;
-    width: 100%;
-
     display: block;
-
-    &.flex.column-center,
-    .flex.column-center {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    &.flex.row-center,
-    .flex.row-center {
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-    }
+		margin: 4px 0;
   }
 }
 
@@ -160,7 +159,7 @@ avessy.dapp {
     display: none;
 
     &.active {
-      display: block;
+      display: flex;
     }
   }
 
@@ -176,4 +175,25 @@ avessy.dapp {
       }
     }
   }
+}
+
+// --- helpers
+.place-center {
+  margin: auto;
+}
+
+.fit-content {
+  width: min-content;
+}
+
+.flex.column-center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flex.row-center {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }

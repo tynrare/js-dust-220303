@@ -170,10 +170,14 @@ export default function Avessy(reset) {
     named: {},
   };
 
-  this.reset = () => {
+	this.stop = () => {
     document.body.removeEventListener("mousedown", this._click);
     this.face.classList.remove("active");
     this.step.frame?.hide();
+	}
+
+  this.reset = () => {
+		this.stop();
     reset();
   };
 
@@ -234,5 +238,7 @@ export default function Avessy(reset) {
     } catch (err) {
       console.error(err);
     }
+
+		return this;
   };
 }
