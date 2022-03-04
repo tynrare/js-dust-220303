@@ -3,8 +3,9 @@
 
 :root {
   --ref-border_radius: 20px;
-  --ref-border_radius-1: 14px;
+  --ref-border_radius-1: 5px;
   --color-bright: #f2f2f2;
+  --color-bright-1: #ffffe5;
   --shade-bright: #98b29b;
   --color-medium: #5d5d5d;
   --shade-medium: #4a4a4a;
@@ -33,9 +34,8 @@
 }
 
 .font-green {
-  text-shadow: 
-		0px 1px 0px var(--shade-font-green),
-		0px 3px 0px var(--shade-font-green);
+  text-shadow: 0px 1px 0px var(--shade-font-green),
+    0px 3px 0px var(--shade-font-green);
 
   color: var(--color-font-white);
 }
@@ -44,15 +44,13 @@
   background-color: var(--color-green);
   border-radius: var(--ref-border_radius-1);
 
-  border-bottom: 4px solid var(--shade-green);
-
-  padding: 8px 8px;
-  margin: 0px 8px;
+  //border-bottom: 6px solid var(--shade-green);
+  box-shadow: 0px 6px 0px 0px var(--shade-green);
 
   // font
   .font-green();
   letter-spacing: -4px;
-  font-size: 1.3em;
+  font-size: 1em;
 }
 
 .font-gold {
@@ -60,26 +58,20 @@
   color: var(--color-font-gold);
 }
 
-// Active avessy ---
-
-avessy.dapp {
-  &.SHOW_ONLY_ONE_PRINT print {
-    display: none;
-
-    &.reveal {
-      display: block;
-    }
-  }
-}
-
 // Stylish avessy ---
 
 avessy {
   &.dapp {
+    avessy {
+      margin: 0px 10px;
+    }
+
     print {
       font-weight: bold;
       font-family: var(--dust-font_family);
       font-size: 32px;
+
+			user-select: none;
 
       .panel-ref();
     }
@@ -90,12 +82,31 @@ avessy {
       color: var(--color-font-white);
     }
 
+    print.font-b,
+    print .font-b {
+      font-family: "Arial";
+      font-size: 20px;
+    }
+
+    print.color-bright-1 {
+      background-color: var(--color-bright-1);
+    }
+
     .whisper {
       font-size: 0.5em;
     }
 
+    button,
+    icon {
+      pointer-events: all;
+      cursor: pointer;
+    }
+
     button {
       .button-ref();
+      margin: 4px 8px;
+      padding: 4px 16px;
+      //height: 50px;
     }
 
     icon {
@@ -112,9 +123,57 @@ avessy {
 // Boring avessy ---
 
 avessy {
+  .noclicks {
+    pointer-events: none;
+  }
+
   print {
     margin: 0.3em 0;
-    display: block;
     width: 100%;
+
+    display: block;
+
+    &.flex.column-center,
+    .flex.column-center {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    &.flex.row-center,
+    .flex.row-center {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+}
+
+// Active avessy ---
+
+avessy.dapp {
+  &.MANAGE_CLICKS print {
+    pointer-events: none;
+  }
+
+  &.HIDE_UNACTIVE avessy {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &.SHOW_ONLY_ONE_PRINT print {
+    display: none;
+    pointer-events: all;
+
+    &.reveal {
+      display: block;
+
+      &.flex {
+        display: flex;
+      }
+    }
   }
 }

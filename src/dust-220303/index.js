@@ -1,30 +1,20 @@
 import Avessy from "./avessy.js";
 
-let face = null;
-
-/**
- * Cleans dust
- */
-function showtime() {
-  face.classList.add("showtime");
-}
-
 function main() {
-  face = document.querySelector("avessy#main");
+  window.addEventListener("hashchange", () => {
+    document.location.reload();
+  });
 
   const hash = document.location.hash;
 
-  window.addEventListener("popstate", () => {
-    window.location.reload();
-  });
-
   // --- avessy
-  const match = hash.match(/\#(avessy)(?:-(\d+))?/);
-  if (match[0]) {
-    showtime();
-    const avessy = new Avessy(face);
-    avessy.run(match[2] ?? 0);
-  }
+  const args = hash.match(/\#(\S+)(?:-(\d+))?/);
+  const avessy = new Avessy(main);
+  avessy.init({ key: args[1] });
+  avessy.run();
+
+  const globals = new Avessy(main);
+  globals.init({ key: "avessy_globals" }).run();
 }
 
 main();

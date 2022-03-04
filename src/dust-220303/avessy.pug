@@ -4,13 +4,31 @@ avessy#main
 
 	print yo 🍍  (#0). Кликай 🐁
 	print этот элемент - #1 сообщение в нарративе.
-	print Элементы типа #[:markdown-it(inline) `print`] выводят новые сообщения
-		icon#goto.readme.icon-md-questionmark-yellow
-		t.whisper <- тут можно прочитать подробнее
-	print А 
-		button#toggle-style.SHOW_ONLY_ONE_PRINT вот этой кнопкой 
-		t можно изменить режим отображения сообщений
 
-	print#readme.dark
-		icon.icon-sd-cross-red
+	print А 
+		button#remove-style.SHOW_ONLY_ONE_PRINT вот этой кнопкой 
+		t можно посмотреть все сообщения
+
+	print Варианты отображения:
+		br
+		button#add-style.SHOW_ONLY_ONE_PRINT скрыть лишнее
+		button#remove-style.SHOW_ONLY_ONE_PRINT показывать все
+		br
+		t.font-b В режиме "отображения всего" не работают некоторые кнопки, например 
+			icon.icon-sd-cross-red
+
+	print 💡Элементы типа #[:markdown-it(inline) `print`] выводят новые сообщения
+		icon#goto.readme.icon-sd-questionmark-yellow
+		t.whisper <- тут можно прочитать подробнее
+
+
+	print.flex.column-center Выбрать сценарий:
+		br
+		div.flex.row-center
+			icon#start-avessy.avessy_menu.icon-sd-home-yellow.avessy_menu
+			button#start-avessy.main main (текущий)
+			button#start-avessy.avessy_dust dust
+
+	print#readme.dark.font-b
+		icon#hide.readme.icon-sd-cross-red
 		include:markdown-it README.md
