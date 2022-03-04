@@ -1,0 +1,24 @@
+avessy#dust_1.place_center
+	sequence
+		cmd#remove-option.SHOW_ONLY_ONE_PRINT
+		cmd#add-style.SHOW_ONLY_ONE_PRINT
+
+	glue.flex
+		label.style-ref-a Андрей Успех
+		print 
+
+	cmd#add-option.SHOW_ONLY_ONE_PRINT
+
+	print Теперь под моей ответсвенностью проект "🌻Цветов  вкуса"
+	print Это новое направление в нашей компании ぐらぐら, созданное для создания самых невероятных цветов🖌️
+
+	print.whisper Я так рад, я так рад
+	print.whisper Я так рад
+	print
+		t:markdown-it(inline).whisper `e=mc²`
+
+	print.flex.column-center 
+		image(src='https://img.youtube.com/vi/BBIZ1OY5csg/0.jpg').noclicks
+
+	print.flex.column-center 
+		icon#start-avessy(arguments='avessy_menu').icon-sd-home-yellow.avessy_menu
