@@ -208,8 +208,9 @@ export default function Avessy(reset) {
   };
 
   this._click = (e) => {
+		const args = (e.target.getAttribute("arguments") ??e.target.classList.value).split(" ");
     if (e.target.tagName === "BUTTON" || e.target.tagName === "ICON") {
-      this.input.put(e.target.id, e.target.classList.value.split(" "));
+      this.input.put(e.target.id, args);
     }
 
     if (e.target.classList.contains("reveal")) {
