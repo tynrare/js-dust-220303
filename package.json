@@ -2,7 +2,6 @@
   "name": "js-dust-220225",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "parcel src/index.pug",
     "build": "parcel build src/index.pug"
