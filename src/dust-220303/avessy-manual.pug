@@ -1,9 +1,28 @@
-avessy#avessy_manual.place-center.noclicks
+avessy#avessy_manual
 
-	print.dark.fit-content.flex.column-center
+	cmd#add-option.SHOW_ONLY_ONE_PRINT
+
+	print.dark.fit-content.flex.column-center.noclicks
 		div.flex.row-center
 			t.font-gold avessy 
 			icon.icon-sd-star-gold
 	
-	print Привет! Это мануал для этой штуки.
+	glue.flex
+		label.style-ref-b.left tynrare:
+		print 
+			whitespace
+			t 👋Привет! Это мануал для этой штуки.
+			br
+			t Кликай по этим бабблам для продолжения.
+
+	print ...
+
+	print Эту страницу можно просматривать и в режиме скролла
+
+	cmd#remove-option.SHOW_ONLY_ONE_PRINT 
+
+	print.pinned
+		button#toggle-style.SHOW_ONLY_ONE_PRINT переключить
+
+	print ...
 		

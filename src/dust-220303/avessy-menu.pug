@@ -1,7 +1,16 @@
-avessy#avessy_menu
-	print.flex.column-center 🍍🍍🍍  
-		br
-		div.flex.row-center
+avessy#avessy_menu.place-center
+	sequence
+		cmd#remove-option.SHOW_ONLY_ONE_PRINT
+
+	glue
+		label.style-ref-b.fit-content.flex.column-center
+			div.flex.row-center
+				t.font-gold avessy 
+				icon.icon-sd-star-gold
+		print.flex.column-center 
+			whitespace
 			icon#start-avessy(arguments='avessy_menu').icon-sd-home-yellow.avessy_menu
+			button#start-avessy(arguments='avessy_manual') manual
 			button#start-avessy(arguments='main') main
 			button#start-avessy(arguments='avessy_dust') dust
+			whitespace

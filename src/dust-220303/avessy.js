@@ -17,7 +17,7 @@ function Frame(app, action) {
 
   this.act = (act) => {
     switch (act.tagName) {
-      case "COMMAND":
+      case "CMD":
         this.app.input.put(act.id, act.classList.value.split(" "));
         break;
       case "PRINT":
@@ -35,8 +35,15 @@ function Frame(app, action) {
 
   this.execute = () => {
     switch (this.action.tagName) {
+      case "GLUE":
+        this.sequence(this.action);
+        break;
       case "SEQUENCE":
         this.sequence(this.action);
+        this.app.step.next();
+        break;
+      case "CMD":
+        this.act(this.action);
         this.app.step.next();
         break;
       case "PRINT":
@@ -109,11 +116,13 @@ function Input(app) {
   const actions = {
     "add-style": (styles) => {
       for (const k in styles) {
+        console.log("adding..", styles[k]);
         dapp.classList.add(styles[k]);
       }
     },
     "remove-style": (styles) => {
       for (const k in styles) {
+        console.log("removing..", styles[k]);
         dapp.classList.remove(styles[k]);
       }
     },
@@ -170,14 +179,14 @@ export default function Avessy(reset) {
     named: {},
   };
 
-	this.stop = () => {
+  this.stop = () => {
     document.body.removeEventListener("mousedown", this._click);
     this.face.classList.remove("active");
     this.step.frame?.hide();
-	}
+  };
 
   this.reset = () => {
-		this.stop();
+    this.stop();
     reset();
   };
 
@@ -203,7 +212,7 @@ export default function Avessy(reset) {
 
       element.classList.remove("reveal");
 
-      if (!element.id) {
+      if (!element.classList.contains("sidekick")) {
         stdin.queue.push(element);
       } else {
         stdin.named[element.id] = element;
@@ -212,12 +221,17 @@ export default function Avessy(reset) {
   };
 
   this._click = (e) => {
-		const args = (e.target.getAttribute("arguments") ??e.target.classList.value).split(" ");
+    const args = (
+      e.target.getAttribute("arguments") ?? e.target.classList.value
+    ).split(" ");
     if (e.target.tagName === "BUTTON" || e.target.tagName === "ICON") {
       this.input.put(e.target.id, args);
     }
 
-    if (e.target.classList.contains("reveal")) {
+    if (
+      e.target.classList.contains("reveal") ||
+      e.target.parentNode.classList.contains("reveal")
+    ) {
       this.step.next();
     }
   };
@@ -239,6 +253,6 @@ export default function Avessy(reset) {
       console.error(err);
     }
 
-		return this;
+    return this;
   };
 }

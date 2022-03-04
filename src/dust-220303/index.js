@@ -8,13 +8,13 @@ function main() {
   const hash = document.location.hash;
 
   // --- avessy
+  const globals = new Avessy(main);
+  globals.init({ key: "avessy_globals" }).run().stop();
+
   const args = hash.match(/\#(\S+)(?:-(\d+))?/);
   const avessy = new Avessy(main);
   avessy.init({ key: args[1] });
   avessy.run();
-
-  const globals = new Avessy(main);
-  globals.init({ key: "avessy_globals" }).run().stop();
 }
 
 main();
