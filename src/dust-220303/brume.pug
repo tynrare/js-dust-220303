@@ -1,0 +1,67 @@
+avessy#brume.place-center
+	cmd#remove-option.SHOW_ONLY_ONE_PRINT
+	cmd#remove-style.SHOW_ONLY_ONE_PRINT
+
+	print.flex.row-center.fit-content
+		icon#start-avessy(arguments='avessy_menu').icon-sd-home-yellow.avessy_menu
+		t 🐛
+	glue
+		label.style-ref-b.left Тимчин
+		print
+			include:markdown-it dust/timchin.md
+
+	glue.flex
+		label.style-ref-a.right Тим
+		print Спасибо друзьям
+
+	glue
+		label.style-ref-b.left Нем
+		print
+			include:markdown-it dust/nem.md
+
+	glue
+		label.style-ref-b.left Виктор
+		print
+			include:markdown-it dust/victor.md
+
+	glue
+		label.style-ref-b.left Евгения
+		print
+			include:markdown-it dust/evgeniya.md
+
+	glue
+		label.style-ref-b.left Мария
+		print
+			include:markdown-it dust/mari-0.md
+
+	glue
+		label.style-ref-b.left Даня
+		print
+			include:markdown-it dust/daniil.md
+
+	glue.flex
+		label.style-ref-a.right Тим
+		print Спасибо коллегам
+
+	glue
+		label.style-ref-b.left Дмитрий
+		print
+			include:markdown-it dust/dmitry-0.md
+
+	glue
+		label.style-ref-b.left Алексей
+		print
+			include:markdown-it dust/alexy.md
+
+	glue
+		label.style-ref-b.left Константин
+		print
+			include:markdown-it dust/konstantin-0.md
+
+	print.dark.fit-content.flex.column-center.noclicks
+		div.flex.row-center
+			t.font-gold avessy 
+			icon.icon-sd-star-gold
+
+
+	//print.whisper Если на этой странице вы смотрите на статичные картинки - проект еще далек до завершения.

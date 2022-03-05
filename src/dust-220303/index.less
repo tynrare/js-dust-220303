@@ -133,6 +133,14 @@ avessy {
 
       user-select: none;
 
+			strong, h1, h2, h3, h4, h5, h6 {
+				color: inherit;
+			}
+
+			img {
+				border-radius: var(--ref-border_radius-1);
+			}
+
       //margin: @print-margin auto;
 
       .panel-ref();
@@ -148,6 +156,10 @@ avessy {
       & * {
         pointer-events: none;
       }
+
+			& a {
+        pointer-events: all;
+			}
     }
 
     print whitespace {
