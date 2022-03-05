@@ -1,17 +1,24 @@
-avessy#brume.place-center.font-b
-	cmd#remove-option.SHOW_ONLY_ONE_PRINT
+avessy#brume.font-b
 	cmd#remove-style.SHOW_ONLY_ONE_PRINT
+	cmd#remove-option.SHOW_ONLY_ONE_PRINT
 
 	print.flex.row-center.fit-content
 		icon#start-avessy(arguments='avessy_menu').icon-sd-home-yellow.avessy_menu
-		t 🐛
+		button#toggle-style.SHOW_ONLY_ONE_PRINT 🐛
+
+	cmd#add-option.SHOW_ONLY_ONE_PRINT
+
+	glue.flex
+		label.style-ref-b.right Тим
+		print Кажется, вспомнил о важном
+
 	glue
 		label.style-ref-b.left Тимчин
 		print
 			include:markdown-it dust/timchin.md
 
 	glue.flex
-		label.style-ref-a.right Тим
+		label.style-ref-b.right Тим
 		print Спасибо друзьям
 
 	glue
@@ -40,7 +47,7 @@ avessy#brume.place-center.font-b
 			include:markdown-it dust/daniil.md
 
 	glue.flex
-		label.style-ref-a.right Тим
+		label.style-ref-b.right Тим
 		print Спасибо коллегам
 
 	glue
@@ -64,7 +71,8 @@ avessy#brume.place-center.font-b
 			icon.icon-sd-star-gold
 
 	glue.flex
-		label.style-ref-a.right БГ
+		label.style-ref-b.right БГ
+		whitespace
 		print Пошел вон, Вавилон
 
 	//print.whisper Если на этой странице вы смотрите на статичные картинки - проект еще далек до завершения.
