@@ -5,8 +5,9 @@ block headcontent
 	link(rel='stylesheet' href='dust-220303/index.less')
 
 block bodycontent
-	avessy.dapp(style='margin-top: 1em;')
+	include:markdown-it index.md
 
+	avessy.dapp(style='margin-top: 1em;')
 		print.dark.fit-content.flex.column-center
 			div.flex.row-center
 				a(href='dust-220303#avessy_menu').font-gold avessy 
@@ -17,4 +18,3 @@ block bodycontent
 				a(href='dust-220304') avessy 
 				icon.icon-sd-_8
 
-	include:markdown-it index.md
