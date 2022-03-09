@@ -1,0 +1,14 @@
+extends ../dust
+
+block headcontent
+	title avessy-1 ▮
+
+block bodycontent
+	db: avessy.dust-220309.lib-headers
+		print 
+			t.big avessy
+			icon.small.texture-sd-avessy
+		page
+			include:markdown-it index.md
+
+		
