@@ -2,6 +2,10 @@
 @import "./generated/ui-elements-md.less";
 @import "./generated/ui-elements-hd.less";
 
+@import "./generated/boardgame_icons-gold-sd.less";
+@import "./generated/boardgame_icons-gold-md.less";
+@import "./generated/boardgame_icons-gold-hd.less";
+
 :root {
   --color-font-main: #424242;
   --color-font-muted: #414143;
@@ -33,14 +37,30 @@ body {
   margin: auto;
 }
 
+icon {
+	margin: auto 4px;
+}
+
 icon.small {
   .sprite-texture-sd();
+
+  &.boardgame {
+    .sprite-boardgame_icons-gold-sd();
+  }
 }
 icon.medium {
   .sprite-texture-md();
+
+  &.boardgame {
+    .sprite-boardgame_icons-gold-md();
+  }
 }
 icon.big {
   .sprite-texture-hd();
+
+  &.boardgame {
+    .sprite-boardgame_icons-gold-hd();
+  }
 }
 
 print {
@@ -60,7 +80,8 @@ page.small {
 }
 
 page {
-  h1 {
+  h1,
+  h2 {
     margin-bottom: 4px;
     margin-top: 8px;
 
@@ -98,18 +119,22 @@ db avessy.dust-220309 {
     //color: var(--color-font-white);
   }
 
+  & > *:not(:first-child) {
+    border-top: 2px dashed var(--color-font-muted);
+  }
+
   & > *:first-child {
     border-radius: var(--borders) var(--borders) 0 0;
     border-top: 4px solid #ffffff50;
-    border-bottom: 2px solid var(--color-font-gold);
-		.darker();
+    //border-bottom: 2px solid var(--color-font-gold);
+    .darker();
   }
 
   & > *:last-child {
     border-radius: 0 0 var(--borders) var(--borders);
     border-bottom: 4px solid #00000050;
-    border-top: 2px solid var(--color-font-gold);
-		.darker();
+    //border-top: 2px solid var(--color-font-gold);
+    .darker();
   }
 }
 
