@@ -1,10 +1,4 @@
----
 
-# [В Меню ![](../dust-220303/dust/star-gold-32.png)](../dust-220303/index.pug#avessy_menu) 
+# [![](../dust-220303/dust/star-gold-32.png) В меню](../dust-220303/index.pug#avessy_menu) 
+# [![](./dust-0/emoji-shrugging-32.png) Чаво](../dust-220303/index.pug#avessy_dust) 
 
----
-
-# Пыль там:
-
-- [avessy-220303](../dust-220303/index.pug)
-- [dust-220306+](../dust-0/index.pug)

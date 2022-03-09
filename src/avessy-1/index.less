@@ -7,8 +7,9 @@
   --color-font-muted: #414143;
   --color-font-bright: #000;
 
-  --color-bright-1: #ffffe5;
-  --shade-bright: #98b29b;
+  --shade-bright: #dbdbdb;
+  --color-bright: #ffffe5;
+
   --color-medium: #5d5d5d;
   --shade-medium: #4a4a4a;
   --color-muted: #b4af91;
@@ -54,8 +55,15 @@ print {
   }
 }
 
+page.small {
+  font-size: 0.7em;
+}
+
 page {
   h1 {
+    margin-bottom: 4px;
+    margin-top: 8px;
+
     a {
       display: inline-flex;
       img {
@@ -67,7 +75,6 @@ page {
 
 db avessy.dust-220309 {
   .print {
-    border-radius: var(--borders);
     background-color: var(--color-bright);
     padding: 8px 100px;
   }
@@ -86,20 +93,28 @@ db avessy.dust-220309 {
     }
   }
 
+  .darker {
+    background-color: var(--shade-bright);
+    //color: var(--color-font-white);
+  }
+
   & > *:first-child {
     border-radius: var(--borders) var(--borders) 0 0;
     border-top: 4px solid #ffffff50;
+    border-bottom: 2px solid var(--color-font-gold);
+		.darker();
   }
 
   & > *:last-child {
     border-radius: 0 0 var(--borders) var(--borders);
     border-bottom: 4px solid #00000050;
+    border-top: 2px solid var(--color-font-gold);
+		.darker();
   }
 }
 
 db avessy.dust-220309.lib-headers {
   --borders: 20px;
-  --color-bright: #f2f2f2;
 
   // watercss
   --text-bright: var(--color-font-bright);
