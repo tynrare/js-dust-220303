@@ -13,10 +13,31 @@ html(lang="en")
 		block headcontent
 
 	body
-		db: avessy.dust-220309.lib-headers
+		db: avessy#titfortat.dust-220309.lib-headers
 			print 
 				t.big Tit for Tat
+
+			print 
+				a.big.text-gold(cmd='toggle_display titfortat_rules') "Мне ничо не понятно"
 				icon.small.boardgame.boardgame_icons-gold-sd-book_open
-			print a
+
+			page#titfortat_rules.hidden
+				include:markdown-it titfortat.md
+
+			print#titfortat_hud
+				t У вас есть яблоки:
+				icon.medium.boardgame.boardgame_icons-gold-md-resource_apple
+				t#titfortat_resouces.big 100
+
+			print 
+				t Вы можете скооперироваться или предать:
+
+			include titfortat_bots.pug
+
+			print#log
+
+			print 
+				a.big.text-gold(href='../index.pug') avessy
+				icon.small.texture-sd-avessy
 			
 		block bodycontent
